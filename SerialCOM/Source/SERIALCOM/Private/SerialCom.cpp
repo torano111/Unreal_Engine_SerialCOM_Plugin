@@ -6,7 +6,6 @@
 #include "Windows/MinWindows.h"
 #include "Windows/HideWindowsPlatformTypes.h"
 
-
 #define BOOL2bool(B) B == 0 ? false : true
 
 USerialCom* USerialCom::OpenComPortWithFlowControl(bool& bOpened, int32 Port, int32 BaudRate, bool DTR, bool RTS)

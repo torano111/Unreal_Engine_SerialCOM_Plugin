@@ -5,6 +5,7 @@
 #include "Windows/AllowWindowsPlatformTypes.h"
 #include "Windows/MinWindows.h"
 #include "Windows/HideWindowsPlatformTypes.h"
+#include "Containers/UnrealString.h"
 
 #define BOOL2bool(B) B == 0 ? false : true
 
@@ -469,6 +470,16 @@ FString USerialCom::LineEndToStr(ELineEnd LineEnd)
 	default:
 		return TEXT("null");
 	}
+}
+
+FString USerialCom::ConvertBytesToString(const TArray<uint8>& In, int32 Count)
+{
+	return BytesToString(In.GetData(), Count);
+}
+
+FString USerialCom::ConvertBytesToHex(const TArray<uint8>& In, int32 NumBytes)
+{
+	return BytesToHex(In.GetData(), NumBytes);
 }
 
 

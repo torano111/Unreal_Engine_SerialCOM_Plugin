@@ -303,6 +303,19 @@ public:
 /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////
 
+	/**
+	* Convert an array of bytes to a TCHAR
+	* @param In byte array values to convert
+	* @param Count number of bytes to convert
+	* @return Valid string representing bytes.
+	*/
+	UFUNCTION(BlueprintPure, meta = (DisplayName = "Bytes to String"), Category = "Communication Serial")
+		static FString ConvertBytesToString(const TArray<uint8>& In, int32 Count);
+
+	/** Convert bytes to uppercase hex string */
+	UFUNCTION(BlueprintPure, meta = (DisplayName = "Bytes to Hex"), Category = "Communication Serial")
+		static FString ConvertBytesToHex(const TArray<uint8>& In, int32 NumBytes);
+
 
 protected:
 	void* m_hIDComDev;
